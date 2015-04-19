@@ -4,14 +4,36 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class ActividadHechosCuriosos extends ActionBarActivity {
+
+    private BaseCurioso textoCurioso = new BaseCurioso();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_hechos_curiosos);
+
+        final TextView etiquetaTexto = (TextView) findViewById(R.id.textoHecho);
+        Button botonNuevoHecho = (Button) findViewById(R.id.botonMostrarHecho);
+
+        View.OnClickListener escuchador = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //el boton es presionado actualiar con un nuevo hecho
+                String texto = textoCurioso.ObtenerRespuestas();
+
+                etiquetaTexto.setText(texto);
+
+
+            }
+        };
     }
 
 
