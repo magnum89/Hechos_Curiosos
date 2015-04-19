@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Hechos Curiosos</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="titulo">¿Sabias Que?</string>
     <string name="action_settings">Settings</string>
+    <string name="dato">Las Hormigas se estiran al despertarse</string>
+    <string name="botodato">Mostrar otro hecho curioso</string>
+
 </resources>
