@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 public class ActividadHechosCuriosos extends ActionBarActivity {
@@ -37,10 +37,12 @@ public class ActividadHechosCuriosos extends ActionBarActivity {
                 etiquetaTexto.setText(texto);
                 botonNuevoHecho.setTextColor(cambiarColor);
 
-
             }
         };
         botonNuevoHecho.setOnClickListener(escuchador);
+
+        Toast.makeText(this,"La actividad fue creada",Toast.LENGTH_LONG).show();//notificacion toast en una sola linea
+
     }
 
 
