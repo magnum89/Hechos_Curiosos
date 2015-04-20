@@ -6,14 +6,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 
 public class ActividadHechosCuriosos extends ActionBarActivity {
 
     private BaseCurioso textoCurioso = new BaseCurioso();
+    private ColeccionColores color = new ColeccionColores();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +22,25 @@ public class ActividadHechosCuriosos extends ActionBarActivity {
         setContentView(R.layout.activity_actividad_hechos_curiosos);
 
         final TextView etiquetaTexto = (TextView) findViewById(R.id.textoHecho);
-        Button botonNuevoHecho = (Button) findViewById(R.id.botonMostrarHecho);
+        final Button botonNuevoHecho = (Button) findViewById(R.id.botonMostrarHecho);
+        final RelativeLayout pantalla = (RelativeLayout) findViewById(R.id.pantalla);
 
         View.OnClickListener escuchador = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //el boton es presionado actualiar con un nuevo hecho
-                String texto = textoCurioso.ObtenerRespuestas();
+                String texto = textoCurioso.ObtenerHecho();
 
+                int cambiarColor = color.ObtenerColor();
+
+                pantalla.setBackgroundColor(cambiarColor);
                 etiquetaTexto.setText(texto);
+                botonNuevoHecho.setTextColor(cambiarColor);
 
 
             }
         };
+        botonNuevoHecho.setOnClickListener(escuchador);
     }
 
 
