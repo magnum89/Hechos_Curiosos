@@ -1,7 +1,9 @@
 package com.basico.hechoscuriosos;
 
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 
 
 public class ActividadHechosCuriosos extends ActionBarActivity {
+
+    public static final String LOGTAG = ActividadHechosCuriosos.class.getSimpleName();//manera de dar nombre de la clase como logtag
 
     private BaseCurioso textoCurioso = new BaseCurioso();
     private ColeccionColores color = new ColeccionColores();
@@ -40,6 +44,8 @@ public class ActividadHechosCuriosos extends ActionBarActivity {
             }
         };
         botonNuevoHecho.setOnClickListener(escuchador);
+
+        Log.d(LOGTAG,"Mensaje desde OnCreate");
 
         Toast.makeText(this,"La actividad fue creada",Toast.LENGTH_LONG).show();//notificacion toast en una sola linea
 
